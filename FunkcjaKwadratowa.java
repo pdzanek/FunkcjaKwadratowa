@@ -3,9 +3,21 @@ import static java.lang.Math.*;
 public class FunkcjaKwadratowa{
 public static void main(String[] args)
 	{
-		int a[] = new int[3];
-		for(int i=0;i<3;i++){
-			a[i]=Integer.parseInt(args[i]);
+		if(args.length == 0){
+			System.out.println("-----Input Error - usage: java FunkcjaKwadratowa a b c");
+			System.exit(1);
+		}
+		if(args.length <3){
+			System.out.println("Error: a, b, c are required");
+			System.exit(1);
+		}else if(args.length > 3){
+			System.out.println("Error: Too much arguments");
+			System.exit(1);
+		}
+		try{
+			a = Integer.parseInteger(args[0]);
+			b = Integer.parseInteger(args[1]);
+			c = Integer.parseInteger(args[2]);
 		}
 		System.out.println("A=" +a[0]);
 		System.out.println("B=" +a[1]);
